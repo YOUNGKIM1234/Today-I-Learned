@@ -57,6 +57,7 @@
         proxy_http_version 1.1;
         proxy_set_header Connection "";
    ```
+    그럼 왜 ui는 영향을 받지 않을까..? 응답이 너무 빨라서 time out 시간 내에 와서...?
 
 
 

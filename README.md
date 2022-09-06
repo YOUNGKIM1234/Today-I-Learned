@@ -1,18 +1,18 @@
 # Today-I-Learned
 
-***
 
 오늘 할 일 :
 
     1. nginx 서버 뚫기
 
-***
+
 
 ## nginx
 
-1. 재설치
+1. 재설치 : https://velog.io/@byjihye/ubuntu2
 
 2. reverse proxy 설정
+   - 옵션 참고 : https://12bme.tistory.com/367
    - 공통 사항 : domain name = viewer
    - 서버 목록 :
      1. web-ui-viewer : location /ui
@@ -46,7 +46,17 @@
         add_header x-frame-options SAMEORIGIN;
     ```
 
-***
+6. response pending 문제
+   nginx는 upstream 서버로 프록시 요청을 보낼 때 http version이 1.0으로 변경한다.
+   그런데 http 1.0에서는 connection close가 default라서 커넥션이 닫히는 바람에 계속 response가 오지 않았던 것.
+
+   proxy_http_version 1.1 로, connection을 삭제해서 해결.
+   ```
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+   ```
+
+
 
 ## TIL
 git repo 생성, ssh key 만들어서 /TIL/ 폴더만 개인 계정으로 로그인할 수 있도록 git config 설정하기

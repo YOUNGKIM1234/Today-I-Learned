@@ -45,3 +45,9 @@
         proxy_hide_header x-frame-options;
         add_header x-frame-options SAMEORIGIN;
     ```
+
+***
+
+## TIL
+git repo 생성, ssh key 만들어서 /TIL/ 폴더만 개인 계정으로 로그인할 수 있도록 git config 설정하기
+https://jeunna.tistory.com/109

@@ -51,7 +51,8 @@
    그런데 http 1.0에서는 connection close가 default라서 커넥션이 닫히는 바람에 계속 response가 오지 않았던 것.
 
    proxy_http_version 1.1 로, connection을 삭제해서 해결.
-   참고 : https://seungtaek-overflow.tistory.com/10
+   참고 : https://seungtaek-overflow.tistory.com/10, 
+   https://mercure.rocks/docs/hub/cookbooks#using-nginx-as-an-http-2-reverse-proxy-in-front-of-the-hub
    ```
         proxy_http_version 1.1;
         proxy_set_header Connection "";
